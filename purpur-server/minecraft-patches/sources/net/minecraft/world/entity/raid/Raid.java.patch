@@ -1,0 +1,46 @@
+--- a/net/minecraft/world/entity/raid/Raid.java
++++ b/net/minecraft/world/entity/raid/Raid.java
+@@ -442,12 +_,13 @@
+         return blockPos != null ? Optional.of(blockPos) : Optional.empty();
+     }
+ 
++
+     private boolean hasMoreWaves() {
+-        return this.hasBonusWave() ? !this.hasSpawnedBonusWave() : !this.isFinalWave();
++        return this.getGroupsSpawned() != this.numGroups + this.raidOmenLevel;
+     }
+ 
+     private boolean isFinalWave() {
+-        return this.getGroupsSpawned() == this.numGroups;
++        return this.getGroupsSpawned() == this.numGroups + this.raidOmenLevel;
+     }
+ 
+     private boolean hasBonusWave() {
+@@ -459,7 +_,7 @@
+     }
+ 
+     private boolean shouldSpawnBonusGroup() {
+-        return this.isFinalWave() && this.getTotalRaidersAlive() == 0 && this.hasBonusWave();
++        return this.getGroupsSpawned() < this.numGroups + this.raidOmenLevel && this.getTotalRaidersAlive() == 0 && this.hasBonusWave();
+     }
+ 
+     private void updateRaiders(ServerLevel level) {
+@@ -518,7 +_,8 @@
+ 
+     private void spawnGroup(ServerLevel level, BlockPos pos) {
+         boolean flag = false;
+-        int i = this.groupsSpawned + 1; final int wave = i; // Paper - OBFHELPER
++        int i = this.groupsSpawned + 1;
++        final int wave = i; // Paper - OBFHELPER
+         this.totalHealth = 0.0F;
+         DifficultyInstance currentDifficultyAt = level.getCurrentDifficultyAt(pos);
+         boolean shouldSpawnBonusGroup = this.shouldSpawnBonusGroup();
+@@ -604,7 +_,7 @@
+     }
+ 
+     private boolean shouldSpawnGroup() {
+-        return this.raidCooldownTicks == 0 && (this.groupsSpawned < this.numGroups || this.shouldSpawnBonusGroup()) && this.getTotalRaidersAlive() == 0;
++        return this.raidCooldownTicks == 0 && ((this.groupsSpawned < this.numGroups + this.raidOmenLevel && this.shouldSpawnBonusGroup()) || (!this.shouldSpawnBonusGroup() && this.groupsSpawned < this.numGroups)) && this.getTotalRaidersAlive() == 0;
+     }
+ 
+     public int getTotalRaidersAlive() {
