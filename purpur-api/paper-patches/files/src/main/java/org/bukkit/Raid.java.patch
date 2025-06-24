@@ -1,0 +1,27 @@
+--- a/src/main/java/org/bukkit/Raid.java
++++ b/src/main/java/org/bukkit/Raid.java
+@@ -28,17 +_,22 @@
+     /**
+      * Gets the Bad Omen level of this raid.
+      *
+-     * @return Bad Omen level (between 0 and 5)
++     * @return Bad Omen level (between 0 and 10)
+      */
+     int getBadOmenLevel();
+ 
++
++
++
+     /**
+      * Sets the Bad Omen level.
+      * <br>
+      * If the level is higher than 1, there will be an additional wave that as
+      * strong as the final wave.
++     * <p>
++     * 更改BadOmen行为,2级以上每级增加1次Bouns wave,BadOmen最高等级改为10
+      *
+-     * @param badOmenLevel new Bad Omen level (from 0-5)
++     * @param badOmenLevel new Bad Omen level (from 0-10)
+      * @throws IllegalArgumentException if invalid Bad Omen level
+      */
+     void setBadOmenLevel(int badOmenLevel);
