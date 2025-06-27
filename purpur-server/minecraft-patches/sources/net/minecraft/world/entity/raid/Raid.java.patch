@@ -1,5 +1,14 @@
 --- a/net/minecraft/world/entity/raid/Raid.java
 +++ b/net/minecraft/world/entity/raid/Raid.java
+@@ -244,7 +_,7 @@
+     }
+ 
+     public int getMaxRaidOmenLevel() {
+-        return 5;
++        return 15;
+     }
+ 
+     public int getRaidOmenLevel() {
 @@ -442,12 +_,13 @@
          return blockPos != null ? Optional.of(blockPos) : Optional.empty();
      }
