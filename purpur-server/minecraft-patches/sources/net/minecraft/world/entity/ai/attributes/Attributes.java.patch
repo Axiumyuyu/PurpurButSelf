@@ -1,0 +1,63 @@
+--- a/net/minecraft/world/entity/ai/attributes/Attributes.java
++++ b/net/minecraft/world/entity/ai/attributes/Attributes.java
+@@ -6,7 +_,7 @@
+ import net.minecraft.resources.ResourceLocation;
+ 
+ public class Attributes {
+-    public static final Holder<Attribute> ARMOR = register("armor", new RangedAttribute("attribute.name.armor", 0.0, 0.0, 30.0).setSyncable(true));
++    public static final Holder<Attribute> ARMOR = register("armor", new RangedAttribute("attribute.name.armor", 0.0, 0.0, 60.0).setSyncable(true));
+     public static final Holder<Attribute> ARMOR_TOUGHNESS = register(
+         "armor_toughness", new RangedAttribute("attribute.name.armor_toughness", 0.0, 0.0, 20.0).setSyncable(true)
+     );
+@@ -19,7 +_,7 @@
+         "block_break_speed", new RangedAttribute("attribute.name.block_break_speed", 1.0, 0.0, 1024.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> BLOCK_INTERACTION_RANGE = register(
+-        "block_interaction_range", new RangedAttribute("attribute.name.block_interaction_range", 4.5, 0.0, 64.0).setSyncable(true)
++        "block_interaction_range", new RangedAttribute("attribute.name.block_interaction_range", 4.5, 0.0, 640.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> BURNING_TIME = register(
+         "burning_time", new RangedAttribute("attribute.name.burning_time", 1.0, 0.0, 1024.0).setSyncable(true).setSentiment(Attribute.Sentiment.NEGATIVE)
+@@ -31,7 +_,7 @@
+         "explosion_knockback_resistance", new RangedAttribute("attribute.name.explosion_knockback_resistance", 0.0, 0.0, 1.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> ENTITY_INTERACTION_RANGE = register(
+-        "entity_interaction_range", new RangedAttribute("attribute.name.entity_interaction_range", 3.0, 0.0, 64.0).setSyncable(true)
++        "entity_interaction_range", new RangedAttribute("attribute.name.entity_interaction_range", 3.0, 0.0, 640.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> FALL_DAMAGE_MULTIPLIER = register(
+         "fall_damage_multiplier",
+@@ -45,7 +_,7 @@
+         "gravity", new RangedAttribute("attribute.name.gravity", 0.08, -1.0, 1.0).setSyncable(true).setSentiment(Attribute.Sentiment.NEUTRAL)
+     );
+     public static final Holder<Attribute> JUMP_STRENGTH = register(
+-        "jump_strength", new RangedAttribute("attribute.name.jump_strength", 0.42F, 0.0, 32.0).setSyncable(true)
++        "jump_strength", new RangedAttribute("attribute.name.jump_strength", 0.42F, 0.0, 64.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> KNOCKBACK_RESISTANCE = register(
+         "knockback_resistance", new RangedAttribute("attribute.name.knockback_resistance", 0.0, 0.0, 1.0)
+@@ -73,7 +_,7 @@
+         "safe_fall_distance", new RangedAttribute("attribute.name.safe_fall_distance", 3.0, -1024.0, 1024.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> SCALE = register(
+-        "scale", new RangedAttribute("attribute.name.scale", 1.0, 0.0625, 16.0).setSyncable(true).setSentiment(Attribute.Sentiment.NEUTRAL)
++        "scale", new RangedAttribute("attribute.name.scale", 1.0, 0.001, 32.0).setSyncable(true).setSentiment(Attribute.Sentiment.NEUTRAL)
+     );
+     public static final Holder<Attribute> SNEAKING_SPEED = register(
+         "sneaking_speed", new RangedAttribute("attribute.name.sneaking_speed", 0.3, 0.0, 1.0).setSyncable(true)
+@@ -82,13 +_,13 @@
+         "spawn_reinforcements", new RangedAttribute("attribute.name.spawn_reinforcements", 0.0, 0.0, 1.0)
+     );
+     public static final Holder<Attribute> STEP_HEIGHT = register(
+-        "step_height", new RangedAttribute("attribute.name.step_height", 0.6, 0.0, 10.0).setSyncable(true)
++        "step_height", new RangedAttribute("attribute.name.step_height", 0.6, 0.0, 32.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> SUBMERGED_MINING_SPEED = register(
+         "submerged_mining_speed", new RangedAttribute("attribute.name.submerged_mining_speed", 0.2, 0.0, 20.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> SWEEPING_DAMAGE_RATIO = register(
+-        "sweeping_damage_ratio", new RangedAttribute("attribute.name.sweeping_damage_ratio", 0.0, 0.0, 1.0).setSyncable(true)
++        "sweeping_damage_ratio", new RangedAttribute("attribute.name.sweeping_damage_ratio", 0.0, 0.0, 2.0).setSyncable(true)
+     );
+     public static final Holder<Attribute> TEMPT_RANGE = register("tempt_range", new RangedAttribute("attribute.name.tempt_range", 10.0, 0.0, 2048.0));
+     public static final Holder<Attribute> WATER_MOVEMENT_EFFICIENCY = register(
